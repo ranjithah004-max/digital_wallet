@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse Wallet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="app-styles.css?v=3" />
+  </head>
+  <body>
+    <div class="auth-screen" id="auth-screen">
+      <form class="auth-card" id="login-form">
+        <a class="brand" href="#"><span class="brand-mark">P</span>pulse</a>
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1>Your wallet, in one place.</h1>
+        <label>Email<input id="email" name="email" type="email" value="ranjit@example.com" required /></label>
+        <label>Password<input id="password" name="password" type="password" value="wallet123" required /></label>
+        <button class="primary login-button" type="submit">Sign in</button>
+        <p class="auth-hint">Demo: ranjit@example.com / wallet123</p><p class="auth-error" id="auth-error"></p>
+      </form>
+    </div>
+    <main class="app-shell" id="wallet-app" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">P</span>pulse</a>
+        <nav aria-label="Main navigation">
+          <a class="nav-link active" href="#dashboard"><span>▦</span>Overview</a>
+          <a class="nav-link" href="#activity"><span>↕</span>Transactions</a>
+          <a class="nav-link" href="#cards"><span>▭</span>My cards</a>
+          <a class="nav-link" href="#insights"><span>◔</span>Insights</a>
+        </nav>
+        <div class="sidebar-footer">
+          <a class="nav-link" href="#settings"><span>⚙</span>Settings</a>
+          <button class="help" type="button">Need help? <span>→</span></button>
+        </div>
+      </aside>
+
+      <section class="content" id="dashboard">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">THURSDAY, 28 AUGUST</p>
+            <h1>Good morning, Ranjit <span>✦</span></h1>
+          </div>
+          <div class="header-actions">
+            <button class="icon-button" aria-label="Notifications">♧<i></i></button>
+            <button class="profile" type="button"><span>R</span><b>⌄</b></button>
+          </div>
+        </header>
+
+        <section class="hero-grid">
+          <article class="balance-card">
+            <div class="balance-head"><span>Available balance</span><button aria-label="Hide balance">◉</button></div>
+            <p class="balance" id="balance">₹ 48,240.50</p>
+            <p class="change">↗ <strong>12.6%</strong> more than last month</p>
+            <div class="balance-actions">
+              <button class="primary action" data-action="Add money">＋ Add money</button>
+              <button class="secondary action" data-action="Withdraw funds">⇧ Withdraw</button>
+            </div>
+            <div class="card-orb orb-one"></div><div class="card-orb orb-two"></div>
+          </article>
+
+          <article class="quick-card">
+            <div class="section-title"><div><p class="eyebrow">MAKE A MOVE</p><h2>Quick actions</h2></div></div>
+            <div class="quick-actions">
+              <button class="quick action" data-action="Send money"><span class="quick-icon purple">↑</span>Send</button>
+              <button class="quick action" data-action="Request money"><span class="quick-icon peach">↓</span>Request</button>
+              <button class="quick action" data-action="Pay a bill"><span class="quick-icon blue">▤</span>Pay bills</button>
+              <button class="quick action" data-action="Scan and pay"><span class="quick-icon green">⌘</span>Scan & pay</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel activity-panel" id="activity">
+            <div class="section-title"><div><p class="eyebrow">YOUR MONEY</p><h2>Recent activity</h2></div><button class="link-button">View all →</button></div>
+            <div class="transaction-list" id="transaction-list">
+              <div class="transaction"><span class="merchant coral">N</span><div><strong>Netflix</strong><small>Entertainment · Today, 9:42 AM</small></div><b class="expense">− ₹ 649.00</b></div>
+              <div class="transaction"><span class="merchant mint">S</span><div><strong>Salary credit</strong><small>Income · Yesterday, 10:15 AM</small></div><b class="income">+ ₹ 52,000.00</b></div>
+              <div class="transaction"><span class="merchant yellow">☕</span><div><strong>Third Wave Coffee</strong><small>Food & drinks · Yesterday, 4:18 PM</small></div><b class="expense">− ₹ 320.50</b></div>
+              <div class="transaction"><span class="merchant lavender">↗</span><div><strong>To Maya Sharma</strong><small>Transfer · 26 Aug, 6:02 PM</small></div><b class="expense">− ₹ 2,500.00</b></div>
+            </div>
+          </article>
+
+          <article class="panel insight-panel" id="insights">
+            <div class="section-title"><div><p class="eyebrow">AUGUST SPENDING</p><h2>₹ 18,740 <span class="muted">/ ₹ 30,000</span></h2></div><button class="dots">•••</button></div>
+            <div class="progress"><span></span></div>
+            <p class="budget-note">You have <strong>₹ 11,260</strong> left to spend this month.</p>
+            <div class="categories">
+              <div><span class="category-icon food">♨</span><p>Food & drinks<small>₹ 6,240</small></p><b>33%</b></div>
+              <div><span class="category-icon shop">♢</span><p>Shopping<small>₹ 4,880</small></p><b>26%</b></div>
+              <div><span class="category-icon transport">⌁</span><p>Transport<small>₹ 2,360</small></p><b>13%</b></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="cards-section" id="cards">
+          <div class="section-title"><div><p class="eyebrow">PAYMENT METHODS</p><h2>Your cards</h2></div><button class="add-card action" data-action="Add a new card">＋ Add card</button></div>
+          <div class="cards-row" id="cards-row">
+            <article class="payment-card gradient-card"><div><span class="chip">▰</span><b>VISA</b></div><p>•••• &nbsp;•••• &nbsp;•••• &nbsp; 4821</p><footer><span>RANJIT KUMAR</span><span>08/28</span></footer></article>
+            <article class="payment-card plain-card"><div><span class="chip">▰</span><b>mastercard</b></div><p>•••• &nbsp;•••• &nbsp;•••• &nbsp; 7102</p><footer><span>RANJIT KUMAR</span><span>11/27</span></footer></article>
+            <article class="safe-card"><span class="safe-icon">♧</span><div><h3>Your money is protected</h3><p>Bank-level encryption and secure payments, always.</p></div><button>Learn more →</button></article>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <form class="modal" id="action-form"><button class="modal-close" type="button" aria-label="Close">×</button><p class="eyebrow">WALLET</p><h2 id="modal-title">Add money</h2><div id="modal-fields"></div><p class="auth-error" id="form-error"></p><button class="primary" type="submit" id="modal-submit">Continue</button></form>
+    </div>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js?v=5"></script>
+  </body>
+</html>
