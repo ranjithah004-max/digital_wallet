@@ -1,3 +1,4 @@
+if (typeof window !== 'undefined') {
 const state = { token: localStorage.getItem('pulse_token'), mode: null };
 const $ = selector => document.querySelector(selector);
 const money = value => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(value);
@@ -42,3 +43,4 @@ document.querySelectorAll('.action').forEach(button => button.addEventListener('
 $('.modal-close').addEventListener('click', closeModal); $('#modal-backdrop').addEventListener('click', event => { if (event.target === event.currentTarget) closeModal(); });
 $('.balance-head button').addEventListener('click', event => { const hidden = $('#balance').dataset.hidden === 'true'; $('#balance').textContent = hidden ? money(Number($('#balance').dataset.value)) : '₹ ••••••••'; $('#balance').dataset.hidden = String(!hidden); event.currentTarget.textContent = hidden ? '◉' : '◌'; });
 if (state.token) { $('#auth-screen').hidden = true; $('#wallet-app').hidden = false; loadWallet().catch(() => { localStorage.removeItem('pulse_token'); state.token = null; $('#auth-screen').hidden = false; $('#wallet-app').hidden = true; }); }
+}
